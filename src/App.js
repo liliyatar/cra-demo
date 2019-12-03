@@ -1,4 +1,5 @@
 import React from 'react';
+import PeopleList from './PeopleList'
 
 const people = [{"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 1905, "father": "Carel Haverbeke", "mother": "Maria van Brussel"},
     {"name": "Emma de Milliano", "sex": "f", "born": 1876, "died": 1956, "father": "Petrus de Milliano", "mother": "Sophia van Damme"},
@@ -41,14 +42,13 @@ const people = [{"name": "Carolus Haverbeke", "sex": "m", "born": 1832, "died": 
     {"name": "Jacobus Bernardus van Brussel", "sex": "m", "born": 1736, "died": 1809, "father": "Jan van Brussel", "mother": "Elisabeth Haverbeke"}];
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello world from Liliya Taran!</h1>
-        <ul>
-            {people.map(person => <li>{person.name}</li>)}
-        </ul>
-    </div>
-  );
+    const visiblePeople = people.slice(0, 3);
+    return (
+        <div className="App">
+            <h1>Hello world from Misha Hrynko!</h1>
+            <PeopleList people={visiblePeople} />
+        </div>
+    );
 }
 
 export default App;
